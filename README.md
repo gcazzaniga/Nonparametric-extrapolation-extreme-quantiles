@@ -1,6 +1,6 @@
 # Nonparametric-extrapolation-extreme-quantiles
 
-This repository contains the code to compute non parametric extrapolation of extreme quantiles, from a huge number of synthetic datasets. In the code are implemented four nonparametric techniques for extrapolation: Hutson (2002), HTS, Kernel Density Estimation, KDE, and two versions of Scholz (2005), respectively called SC0 and SC7. The code also compares perfromances among the different methodologies. For any question or comment concerning the code please contact Fabiola Banfi (fabiola.banfi@polimi.it) or Greta Cazzaniga (greta.cazzaniga@polimi.it).
+This repository contains the code to compute non parametric extrapolation of extreme quantiles, from a huge number of synthetic datasets. In the code are implemented four nonparametric techniques for extrapolation: Hutson (2002), HTS, Kernel Density Estimation, KDE, and two versions of Scholz (2005), respectively called SC0 and SC7. The code also compares performances among the different methodologies. For any question or comment concerning the code please contact Fabiola Banfi (fabiola.banfi@polimi.it) or Greta Cazzaniga (greta.cazzaniga@polimi.it).
 
 The code for generation of synthetic data and extrapolation of extreme quantiles is written in R. Packages required to run the code include `climod`, `kdensity`, `rstudioapi`, `rtop`, and `reshape2`.
 The code which plot figures is instead written in Python 3 and dependencies required are `pyreadr`, `numpy`, `pandas`, and `matplotlib`. Moreover an installation of jupyter is needed to run the *.ipynb notebook.
