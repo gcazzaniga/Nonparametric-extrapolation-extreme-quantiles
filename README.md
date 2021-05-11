@@ -14,7 +14,7 @@ The code, which plot figures is instead written in Python 3 and dependencies req
   * `SyntheticDataSet_*DistributionName*.rds` contains generated synthetic datasets.
 - `1_main.R` script is called in `0_RunCode.R` and contains the main code. This script must not be run;
 - `2_functions.R` script contains the list of functions required by `1_main.R`. This script must not be run;
-- `input.txt` text file contains all the setting options for generation of synthetic datasets and selection of return periods for which to calculate the quantiles in extrapolation. In this file, these options can be changed by users:
+- `input.txt` text file including all the setting options for generation of synthetic datasets and selection of return periods for which to calculate the quantiles in extrapolation. In this file, these options can be changed by users:
   * name of the distribution from which synthetic datasets are generated. Distributions available for the code are *Gamma*, *Cauchy*, and *Uniform*;
   * values of distribution parameters. Insert as par1 and par2 respectively the shape and scale parameters for *Gamma* disitrbution, the location and scale parameters for *Cauchy*, and lower and upper limits for *Uniform*;
   * number of synthetic datasets to be generated;
