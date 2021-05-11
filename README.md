@@ -20,7 +20,7 @@ The code which plot figures is instead written in Python 3 and dependencies requ
   * number of synthetic datasets to be generated;
   * sample length/lengths of synthetic datasets (user can enter up to 6 sample lengths);
   * return period/periods for which to estimate the quantiles (user can enter up to 5 return periods);
-- `CreateFigures.ipynb` notebook for plotting four figures which are saved as .pdf files. 
+- `CreateFigures.ipynb` notebook plots the relevant results in four figures that are also saved as .pdf files.
 
 ## References
 Hutson, A. D. (2002). A semi-parametric quantile function estimator for use it in bootstrap estimation procedures. *Statistics and Computing, 12(4)*, 331-338. doi: 10.1023/A:1020783911574
