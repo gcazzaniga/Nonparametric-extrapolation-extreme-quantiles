@@ -25,4 +25,4 @@ The code, which plot figures is instead written in Python 3 and dependencies req
 ## References:
 Hutson, A. D. (2002). A semi-parametric quantile function estimator for use it in bootstrap estimation procedures. *Statistics and Computing, 12(4)*, 331-338. doi: 10.1023/A:1020783911574
 
-Scholz, F. W. (1995). Nonparametric tail extrapolation: Simulation Results (Tech. Rep. No. ISSTECH-95-015). Seattle, WA, United States of America> Boeing Information and Support Services.
+Scholz, F. W. (1995). Nonparametric tail extrapolation: Simulation Results (Tech. Rep. No. ISSTECH-95-015). Seattle, WA, United States of America: Boeing Information and Support Services.
