@@ -9,7 +9,7 @@ for (package in packages) {
     stop(
       sprintf(
         "Package %s is not installed.
-                 See for the list of the required packages",
+                 See https://github.com/gcazzaniga/Nonparametric-extrapolation-extreme-quantiles.git for the list of the required packages",
         package
       )
     )
