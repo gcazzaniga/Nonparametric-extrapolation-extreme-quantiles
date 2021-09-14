@@ -15,7 +15,7 @@ The code which plots figures is instead written in Python 3 and dependencies req
 - `1_main.R` script is called in `0_RunCode.R` and contains the main code. This script must not be run;
 - `2_functions.R` script contains the list of functions required by `1_main.R`. This script must not be run;
 - `input.txt` text file includes all the setting options for generation of synthetic datasets and selection of return periods for which to calculate the quantiles in extrapolation. In this file, these options can be changed by users:
-  * name of the distribution from which synthetic datasets are generated. Distributions available for the code are *Gamma*, *Truncated Cauchy* (use *Cauchy* as name to insert in the .txt file), *Uniform*, and *Generalized Pareto* (use *GPareto* as name to insert in the .txt file). 
+  * name of the distribution from which synthetic datasets are generated. Distributions available for the code are *Gamma*, *Truncated Cauchy* (use *Cauchy* as distribution name to insert in the .txt file), *Uniform*, and *Generalized Pareto* (use *GPareto* as distribution name to insert in the .txt file). 
   * values of distribution parameters. Insert as par1 and par2 respectively the shape and scale parameters for *Gamma* distribution, the location and scale parameters for *Truncated Cauchy*, lower and upper limits for *Uniform*. Concerning the *Generalized Pareto* 3 parameters are required: par1, par2, and par3 that are location, scale, and shape, respectively;
   * number of synthetic datasets to be generated;
   * sample length/lengths of synthetic datasets (user can enter up to 6 sample lengths);
