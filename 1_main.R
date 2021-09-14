@@ -35,8 +35,8 @@ invalid_data <-  data.frame(Sample_length = integer(),
                             R2_over_0.7 = logical()) 
 synthetic_dataset <- list()
 
-
-for (n in sample_len){
+for (n in sample_len) {
+  
   message(sprintf("Starting analysis for sample length %d...", n))
   ## Initialize dataframe and variables for simulations with sample length n ####
   
@@ -93,7 +93,7 @@ for (n in sample_len){
     h0 <- bw.nrd0(dataset)
     w0 <- 0.5
     log <- capture.output(res <- sceua(lcv_obj, pars = c(h0, w0), 
-                                       lower = c(0, 0), upper = c(5, 1),
+                                       lower = c(0, 0), upper = c(60, 1),
                                        data = dataset))
     h <- res$par[1]
     w <- res$par[2]
@@ -110,10 +110,11 @@ for (n in sample_len){
       
     } else if (distribution$name ==  "Cauchy"){
       
-      xl <- min(dataset)
+      xl <- 0.1
       xu <- max(1000, 2 * max(dataset))
       x <- seq(xl, xu, by = 0.1)
-      f_x <- KDE(x, data = dataset, h = h, w = w)
+      area <- integrate(KDE, lower = 0, upper = Inf, subdivisions = 200L, data = dataset, h = h, w = w)
+      f_x <- KDE(x, data = dataset, h = h, w = w) / area$value 
       
     } else if (distribution$name == "Uniform") {
       
@@ -122,6 +123,15 @@ for (n in sample_len){
       x <- seq(xl, xu, 0.001)
       area <- integrate(KDE, lower = xl, upper = xu, data = dataset, h = h, w = w)
       f_x <- KDE(x, data = dataset, h = h, w = w) / area$value
+      
+    } else if (distribution$name == "GPareto"){
+      
+      xl <- distribution$par1 + 0.1
+      xu <- (2 * max(Y_t))
+      x <- seq(xl, xu, by = 0.1)
+      area <- integrate(KDE,lower = distribution$par1, upper = Inf, subdivisions = 200L, data = dataset, h = h, w = w)
+      f_x <- KDE(x, data = dataset, h = h, w = w) / area$value 
+      
     }
     
     F_x <- pdf2cdf(f_x, x = x, normalize = TRUE, expand = FALSE)

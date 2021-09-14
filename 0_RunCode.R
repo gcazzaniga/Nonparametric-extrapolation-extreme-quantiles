@@ -1,6 +1,6 @@
 ### Load packages ##############################################################
 
-packages <- c("climod", "kdensity", "rstudioapi", "rtop", "reshape2")
+packages <- c("climod", "kdensity", "rstudioapi", "rtop", "reshape2", "evd")
 
 for (package in packages) {
   if (package %in% rownames(installed.packages())) {
@@ -9,7 +9,7 @@ for (package in packages) {
     stop(
       sprintf(
         "Package %s is not installed.
-                 See https://github.com/gcazzaniga/Nonparametric-extrapolation-extreme-quantiles.git for the list of the required packages",
+                 See for the list of the required packages",
         package
       )
     )
