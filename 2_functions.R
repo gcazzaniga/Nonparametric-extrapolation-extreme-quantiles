@@ -1,4 +1,4 @@
-## List of functions required by "0_main.R"
+## List of functions required by "1_main.R"
 
 # ker, KDE ########################################################################
 
@@ -57,20 +57,13 @@ sample_gen<-function(distribution,n) {
     rate <- distribution$par2
     data_set <- rgamma(n, shape = shape, rate = rate)
     } else if (distribution$name == "Cauchy"){
-    l <- distribution$par1
-    s <- distribution$par2
-    #data_set <- rcauchy(n, location = l, scale = s)
-    P <- pi/2 - atan(-l / s)
-    data_set <- l + s * tan(P * runif(n) + atan(-l / s))
+    location <- distribution$par1
+    scale <- distribution$par2
+    data_set <- rcauchy(n, location = location, scale = scale)
     } else if  (distribution$name == "Uniform") {
       lower <- distribution$par1
     upper <- distribution$par2
     data_set <- runif(n, min = lower, max = upper)
-    } else if (distribution$name == "GPareto") {
-    loc <- distribution$par1
-    scale <- distribution$par2
-    shape <- distribution$par3
-    data_set <- rgpd(n, loc = loc, scale = scale, shape = shape)
     }
   return(data_set)
 }
@@ -87,20 +80,13 @@ quantile_gen<-function(distribution,u) {
     rate <- distribution$par2
     Y <- qgamma(u, shape=shape, rate=rate)
     } else if (distribution$name == "Cauchy"){
-    l <- distribution$par1
-    s <- distribution$par2
-    P <- pi/2 - atan(-l / s)
-    Y <- l + s * tan(P * u + atan(-l / s))
-    #Y <- qcauchy(u, location = l, scale = s)
+    location <- distribution$par1
+    scale <- distribution$par2
+    Y <- qcauchy(u, location = location, scale = scale)
     } else if  (distribution$name == "Uniform") {
       lower <- distribution$par1
     upper <- distribution$par2
     Y <- qunif(u, min = lower, max = upper)
-    } else if (distribution$name == "GPareto") {
-    loc <- distribution$par1
-    scale <- distribution$par2
-    shape <- distribution$par3
-    Y <- qgpd(u, loc = loc, scale = scale, shape = shape)
     }
   return(Y)
 }
